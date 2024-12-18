@@ -1,0 +1,8 @@
+{
+    "file_processing": {
+        "image_directory": "data/....",
+        "train_list": "",
+        "test_list": "",
+        "output": ""
+    }
+}
