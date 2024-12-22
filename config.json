@@ -1,8 +1,11 @@
 {
     "file_processing": {
         "image_directory": "data/....",
-        "train_list": "",
-        "test_list": "",
-        "output": ""
+        "output": "",
+        "key_filepath": "/data/Data_Entry_2017.csv",
+        "test_list": "/data/test_list.txt",
+        "train_val_list": "/data/train_val_list.txt",
+        "condition_list": ["atelectasis", "consolidation", "infiltration", "pneumothorax", "edema", "emphysema", "fibrosis",
+                           "effusion", "pneumonia", "pleural_thickening", "cardiomegaly", "nodule", "mass", "hernia"]
     }
 }

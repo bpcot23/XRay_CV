@@ -2,6 +2,7 @@ import json
 import os
 import re
 
+from file_processor import FileProcessor
 
 def load_config(config_path):
     """
@@ -26,6 +27,10 @@ def main(config):
     Args:
         config: json path for fetching all global variable values and filepaths.
     """
+    # Initialize FileProcessor class, create training and test datasets
+    myFP = FileProcessor(config)
+    image_key = myFP.create_key()
+    train_key, test_key = myFP.train_test_split()
 
 if __name__ == "__main__":
     config = load_config(path='config.json')
