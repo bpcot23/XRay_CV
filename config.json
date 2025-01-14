@@ -1,11 +1,40 @@
 {
     "file_processing": {
-        "image_directory": "data/....",
-        "output": "",
-        "key_filepath": "/data/Data_Entry_2017.csv",
-        "test_list": "/data/test_list.txt",
-        "train_val_list": "/data/train_val_list.txt",
-        "condition_list": ["atelectasis", "consolidation", "infiltration", "pneumothorax", "edema", "emphysema", "fibrosis",
-                           "effusion", "pneumonia", "pleural_thickening", "cardiomegaly", "nodule", "mass", "hernia"]
+        "save_or_load_data": "load",
+        "saved_trainpath": "../data/train_dataset.npz",
+        "saved_valpath": "../data/validation_dataset.npz",
+        "saved_testpath": "../data/test_dataset.npz",
+
+        "dataset": "pneumonia",
+        "key_filepath": "../data/Pneumonia_dataset.csv",
+        "output_csv_path": "../results/test_predictions.csv",
+        "metrics_output_path": "../results/test_metrics.txt",
+
+        "target_condition": "pneumonia",
+        "image_height": 300,
+        "image_width": 300,
+        "batch_size": 16,
+
+        "multi_condition_dataset": {
+            "image_directory": "../data/images_001/",
+            "condition_list": ["atelectasis", "consolidation", "infiltration", "pneumothorax", "edema", "emphysema", "fibrosis",
+                            "effusion", "pneumonia", "pleural_thickening", "cardiomegaly", "nodule", "mass", "hernia"]
+        },
+
+        "undersample_majority": "False",
+        "augmentation": "True",
+        "augment_with_SMOTE": "True",
+        "num_aug_per_image": 5
+    },
+    "model_building": {
+        "fine_tuning": "True",
+        "fine_tune_at": 354,
+        "fine_tune_learning_rate": "1e-5",
+
+        "dropout_rate": 0.5,
+        "activation_fn": "sigmoid",
+        "loss_fn": "binary_crossentropy",
+        "decision_threshold": 0.5,
+        "num_epochs": 5
     }
 }
